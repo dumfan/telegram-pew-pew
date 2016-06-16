@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js",
     "test": "ava",
     "lint": "eslint ."
   },
@@ -12,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "google": "^2.0.0",
     "lodash": "^4.13.1",
     "node-telegram-bot-api": "^0.23.3",
     "winston": "^2.2.0"
@@ -22,7 +24,9 @@
     "chai": "^3.5.0",
     "eslint": "^2.12.0",
     "eslint-config-airbnb-base": "^3.0.1",
-    "eslint-plugin-import": "^1.8.1"
+    "eslint-plugin-import": "^1.8.1",
+    "nodemon": "^1.9.2",
+    "tap-spec": "^4.1.1"
   },
   "pre-commit": [
     "test",

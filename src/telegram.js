@@ -2,11 +2,14 @@ const TelegramBot = require('node-telegram-bot-api');
 const glob = require('glob');
 const path = require('path');
 
-function parse(string) {
-  let msg = string;
-  msg = msg.split(' ');
-  msg[0] = msg[0].split('@')[0].replace('/', '');
-  return msg[0];
+function parse(msg) {
+  return msg.split(' ')[0].split('@')[0].replace('/', '');
+}
+
+function parseArgs(msg) {
+  const args = msg.split(' ');
+  args.shift();
+  return args;
 }
 
 function loadCommands() {
@@ -16,9 +19,9 @@ function loadCommands() {
       files.forEach(file => {
         const basename = path.basename(file, '.js');
         // eslint-disable-next-line global-require
-        const func = require(file);
-        if (typeof(func) === 'function') {
-          commands[basename] = func;
+        const obj = require(file);
+        if (typeof(obj.func) === 'function') {
+          commands[basename] = obj;
         }
       });
       resolve(commands);
@@ -32,4 +35,5 @@ module.exports = {
   }),
   loadCommands,
   parse,
+  parseArgs,
 };

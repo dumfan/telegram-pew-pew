@@ -1,13 +1,22 @@
-const { parse, loadCommands, bot } = require('./telegram');
-const log = require('./log');
+const { parse, parseArgs, loadCommands, bot } = require('./telegram');
+
+function createDone(chatId) {
+  return function (string) {
+    bot.sendMessage(chatId, string);
+  };
+}
 
 loadCommands().then(commands => {
-  bot.on('message', (msg) => {
-    log.debug(msg);
-    const chatId = msg.chat.id;
+  bot.on('message', (obj) => {
+    const msg = obj;
     const cmd = parse(msg.text);
+    msg.args = parseArgs(msg.text);
     if (commands[cmd]) {
-      bot.sendMessage(chatId, commands[cmd](msg));
+      const done = createDone(msg.chat.id);
+      const result = commands[cmd].func(msg, done);
+      if (result) {
+        bot.sendMessage(msg.chat.id, result);
+      }
     }
   });
 });

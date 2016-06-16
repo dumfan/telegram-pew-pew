@@ -4,5 +4,9 @@
   "env": {
     "mocha": true,
     "node": true
+  },
+  "rules": {
+    "func-names": 0,
+    "consistent-return": 0
   }
 }
