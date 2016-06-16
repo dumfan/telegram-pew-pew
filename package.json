@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start -f src/index.js --name=botfan",
+    "start": "pm2 start -f src/index.js --name=botfan && pm2 logs botfan",
     "start:dev": "nodemon src/index.js",
     "test": "ava",
     "lint": "eslint ."
