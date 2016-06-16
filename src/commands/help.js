@@ -3,6 +3,7 @@ const { forEach } = require('lodash');
 
 module.exports = {
   name: 'Help', // max 20 chars
+  info: 'derrrr',
   func: (msg, done) => {
     if (msg && msg.text) {
       const args = parseArgs(msg.text);
