@@ -15,7 +15,7 @@ module.exports = {
           const array = ['All commands:', 'Use `/help cmd` to learn more about `cmd`'];
           forEach(commands, (obj, name) => {
             array.push(`./${name} - ${obj.name}`);
-          })
+          });
           done(array.join('\n'));
         }
       });
