@@ -1,3 +1,1 @@
-module.exports = (obj) => {
-  return 'Hello';
-};
+module.exports = () => 'Hello';

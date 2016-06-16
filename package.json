@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "ava"
+    "test": "ava",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -22,5 +23,9 @@
     "eslint": "^2.12.0",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.8.1"
-  }
+  },
+  "pre-commit": [
+    "test",
+    "lint"
+  ]
 }
