@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "6.2.0"
+
+install: true
+
+script:
+  - npm run lint
+  - npm test
