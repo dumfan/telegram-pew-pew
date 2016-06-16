@@ -1,6 +1,6 @@
 import test from 'ava';
 const { forEach } = require('lodash');
-const { loadCommands } = require('../src/telegram');
+const { loadCommands } = require('../src/helpers');
 
 const msg1 = {
   message_id: 40,

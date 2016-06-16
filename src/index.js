@@ -1,4 +1,5 @@
-const { parse, parseArgs, loadCommands, bot } = require('./telegram');
+const { bot } = require('./telegram');
+const { parse, parseArgs, loadCommands } = require('./helpers');
 
 function createDone(chatId) {
   return function (string) {

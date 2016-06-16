@@ -1,4 +1,4 @@
-const parse = require('../telegram').parseArgs;
+const parse = require('../helpers').parseArgs;
 const log = require('../log');
 const google = require('google');
 
@@ -20,7 +20,8 @@ const googleSearch = (query, callback) => {
 };
 
 module.exports = {
-  name: 'Google search', // max 20 chars
+  name: 'Google Search', // max 20 chars
+  info: '`/google searchstring` to get the first result',
   func: (msg, done) => {
     if (msg && msg.text) {
       const argString = parse(msg.text).join(' ');

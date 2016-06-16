@@ -1,5 +1,5 @@
 import test from 'ava';
-const { parse, parseArgs } = require('../src/telegram');
+const { parse, parseArgs } = require('../src/helpers');
 
 const string = '/haddock@botfan wibron är cool';
 
@@ -10,5 +10,7 @@ test('parse()', async function(t) {
 
 test('parseArgs()', async function(t) {
   const parsed = parseArgs(string);
+  t.plan(2);
   t.deepEqual(parsed, ['wibron', 'är', 'cool']);
+  t.deepEqual(parseArgs(''), []);
 });
