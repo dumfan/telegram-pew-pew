@@ -5,7 +5,7 @@ module.exports = {
   name: 'Help', // max 20 chars
   info: 'derrrr',
   func: (msg, done) => {
-    if (msg && msg.text) {
+    if (msg && msg.text && done) {
       const args = parseArgs(msg.text);
       loadCommands().then(commands => {
         if (args[0] && commands[args[0]]) {
