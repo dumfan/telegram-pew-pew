@@ -31,5 +31,8 @@
   "pre-commit": [
     "test",
     "lint"
-  ]
+  ],
+  "engines": {
+    "node": "6.2.0"
+  }
 }
