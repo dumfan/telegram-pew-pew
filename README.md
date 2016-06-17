@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/benjick/telegram-pew-pew.svg?branch=master)](https://travis-ci.org/benjick/telegram-pew-pew)
+[![Build Status](https://travis-ci.org/dumfan/telegram-pew-pew.svg?branch=master)](https://travis-ci.org/dumfan/telegram-pew-pew)
 
 ## Telegram bot amazing
 
