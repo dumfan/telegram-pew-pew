@@ -1,0 +1,5 @@
+web:
+  build: .
+  restart: always
+  environment:
+    - TELEGRAM_TOKEN=your_token_here

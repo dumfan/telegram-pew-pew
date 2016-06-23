@@ -7,7 +7,9 @@
     "start": "pm2 start -f src/index.js --name=botfan && pm2 logs botfan",
     "start:dev": "nodemon src/index.js",
     "test": "ava",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "docker:build": "docker build --no-cache -t bot .",
+    "docker:run": "docker run -it bot"
   },
   "keywords": [],
   "author": "",
