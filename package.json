@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eightball": "^1.0.1",
     "glob": "^7.0.4",
     "google": "^2.0.0",
     "helg": "0.0.2",
