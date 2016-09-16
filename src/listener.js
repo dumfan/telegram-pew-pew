@@ -1,5 +1,6 @@
 const { bot } = require('./telegram');
 const { parse, parseArgs } = require('./helpers');
+const log = require('./log');
 
 function createDone(chatId) {
   return function (string) {
@@ -9,6 +10,7 @@ function createDone(chatId) {
 
 const listen = commands => {
   bot.on('message', (obj) => {
+    log.info('Got message', obj);
     if (obj.text) {
       const msg = obj;
       const cmd = parse(msg.text);

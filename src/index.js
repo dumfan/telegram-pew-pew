@@ -8,4 +8,7 @@ if (!process.env.TELEGRAM_TOKEN) {
 const { loadCommands } = require('./helpers');
 const listen = require('./listener');
 
-loadCommands().then(listen);
+loadCommands().then(cmds => {
+  log.info(`Loaded ${Object.keys(cmds).length} commands`);
+  listen(cmds);
+});
