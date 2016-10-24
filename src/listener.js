@@ -17,7 +17,7 @@ const listen = commands => {
       msg.args = parseArgs(msg.text);
       if (commands[cmd]) {
         const done = createDone(msg.chat.id);
-        const result = commands[cmd].func(msg, done);
+        const result = commands[cmd].func(msg, done, bot);
         if (result) {
           bot.sendMessage(msg.chat.id, result);
         }
