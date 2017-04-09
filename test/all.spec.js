@@ -22,10 +22,10 @@ const msg1 = {
 };
 
 test('All functions', async function(t) {
-  const bar = await loadCommands('bar');
-  forEach(bar, (obj, name) => {
+  const commands = await loadCommands();
+  forEach(commands, (obj, name) => {
     t.truthy(obj.name, `No name set for ${name}`);
     t.notThrows(obj.func, `${name} function is failing`);
-    t.notThrows(() => obj.func(msg1), `${name} function is failing`);
+    t.notThrows(() => obj.func(msg1, () => {}), `${name} function is failing`);
   });
 });
