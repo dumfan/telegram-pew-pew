@@ -1,7 +1,7 @@
-const { parseArgs, loadCommands } = require('../helpers');
+import { parseArgs, loadCommands } from '../helpers';
 const { forEach } = require('lodash');
 
-module.exports = {
+export default {
   name: 'Help', // max 20 chars
   info: 'derrrr',
   func: (msg, done) => {

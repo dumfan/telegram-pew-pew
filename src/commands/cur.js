@@ -1,5 +1,5 @@
-const parse = require('../helpers').parseArgs;
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+import { parseArgs as parse } from '../helpers';
 
 const convert = (amountString, _from = 'EUR', _to = 'SEK') => {
   const to = _to.toUpperCase();
@@ -12,7 +12,7 @@ const convert = (amountString, _from = 'EUR', _to = 'SEK') => {
   });
 };
 
-module.exports = {
+export default {
   name: 'Dr Currency bitches', // max 20 chars
   info: 'Data from http://fixer.io/',
   func: (msg, done) => {

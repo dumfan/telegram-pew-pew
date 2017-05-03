@@ -1,6 +1,6 @@
-const { bot } = require('./telegram');
-const { parse, parseArgs } = require('./helpers');
-const log = require('./log');
+import { bot } from './telegram';
+import { parse, parseArgs } from './helpers';
+import log from './log';
 
 function createDone(chatId) {
   return function (string) {
@@ -26,4 +26,4 @@ const listen = commands => {
   });
 };
 
-module.exports = listen;
+export default listen;

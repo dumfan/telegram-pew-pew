@@ -1,6 +1,6 @@
-const helg = require('helg');
+import helg from 'helg';
 
-module.exports = {
+export default {
   name: 'Äre ens helg?', // max 20 chars
   func: () => (helg.ere() ? 'd e d!' : 'ne'),
 };

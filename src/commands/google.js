@@ -1,6 +1,6 @@
-const parse = require('../helpers').parseArgs;
-const log = require('../log');
-const google = require('google');
+import google from 'google';
+import { parseArgs as parse } from '../helpers';
+import log from '../log';
 
 const googleSearch = (query, callback) => {
   google(query, (err, res) => {
@@ -19,7 +19,7 @@ const googleSearch = (query, callback) => {
   });
 };
 
-module.exports = {
+export default {
   name: 'Google Search', // max 20 chars
   info: '`/google searchstring` to get the first result',
   func: (msg, done) => {

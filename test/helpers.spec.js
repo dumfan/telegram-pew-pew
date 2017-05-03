@@ -1,5 +1,5 @@
 import test from 'ava';
-const { parse, parseArgs } = require('../src/helpers');
+import { parse, parseArgs } from '../src/helpers';
 
 const string = '/haddock@botfan wibron är cool';
 
