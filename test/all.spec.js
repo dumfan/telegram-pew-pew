@@ -29,8 +29,5 @@ test('All functions', () => {
     expect(obj.name).toBeTruthy();
     expect(obj.func).not.toThrow();
     expect(() => obj.func(msg1, () => {})).not.toThrow();
-    // t.truthy(obj.name, `No name set for ${name}`);
-    // t.notThrows(obj.func, `${name} function is failing`);
-    // t.notThrows(() => obj.func(msg1, () => {}), `${name} function is failing`);
   });
 });
