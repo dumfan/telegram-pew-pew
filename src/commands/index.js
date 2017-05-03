@@ -6,10 +6,9 @@ import google from './google';
 import helg from './helg';
 import pirate from './pirate';
 import shrug from './shrug';
-import test from './test';
 
 export default {
   help,
   '8ball': ball8,
-  cur, fetch, google, helg, pirate, shrug, test,
+  cur, fetch, google, helg, pirate, shrug,
 };
