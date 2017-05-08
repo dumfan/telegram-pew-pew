@@ -1,16 +1,14 @@
-import test from 'ava';
-const { parse, parseArgs } = require('../src/helpers');
+import { parse, parseArgs } from '../src/helpers';
 
 const string = '/haddock@botfan wibron är cool';
 
-test('parse()', async function(t) {
+test('parse()', () => {
   const parsed = parse(string);
-  t.is(parsed, 'haddock');
+  expect(parsed).toBe('haddock');
 });
 
-test('parseArgs()', async function(t) {
+test('parseArgs()', () => {
   const parsed = parseArgs(string);
-  t.plan(2);
-  t.deepEqual(parsed, ['wibron', 'är', 'cool']);
-  t.deepEqual(parseArgs(''), []);
+  expect(parsed).toEqual(['wibron', 'är', 'cool']);
+  expect(parseArgs('')).toEqual([]);
 });

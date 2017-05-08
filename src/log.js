@@ -1,5 +1,5 @@
-const winston = require('winston');
-const Sentry = require('winston-sentry');
+import winston from 'winston';
+import Sentry from 'winston-sentry';
 
 const level = (process.env.NODE_ENV === 'production') ? 'info' : 'debug';
 
@@ -28,4 +28,4 @@ const logger = new winston.Logger({
 
 logger.info('Logger init');
 
-module.exports = logger;
+export default logger;

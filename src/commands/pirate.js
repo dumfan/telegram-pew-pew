@@ -1,7 +1,7 @@
-const pirateSpeak = require('pirate-speak');
-const parse = require('../helpers').parseArgs;
+import pirateSpeak from 'pirate-speak';
+import { parseArgs as parse } from '../helpers';
 
-module.exports = {
+export default {
   name: 'Yarrr!', // max 20 chars
   func: (msg) => {
     if (msg && msg.text) {

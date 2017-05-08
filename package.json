@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start -f src/index.js --name=botfan && pm2 logs botfan",
-    "start:dev": "nodemon src/index.js",
-    "test": "ava",
+    "start": "pm2 start -f build/main.js --name=botfan && pm2 logs botfan",
+    "build": "backpack build",
+    "start:dev": "backpack",
+    "test": "jest",
     "lint": "eslint .",
     "docker:build": "docker build --no-cache -t bot .",
     "docker:run": "docker run -it bot"
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backpack-core": "^0.3.0",
     "eightball": "^1.0.1",
     "glob": "^7.0.4",
     "google": "^2.0.0",
@@ -29,13 +31,11 @@
     "winston-sentry": "^0.1.4"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
     "babel-eslint": "^6.0.4",
-    "chai": "^3.5.0",
     "eslint": "^2.12.0",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.8.1",
-    "nodemon": "^1.9.2",
+    "jest": "^19.0.2",
     "pre-commit": "^1.1.3",
     "tap-spec": "^4.1.1"
   },
@@ -45,5 +45,14 @@
   ],
   "engines": {
     "node": "6.2.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   }
 }

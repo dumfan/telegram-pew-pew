@@ -1,6 +1,6 @@
-const predict = require('eightball');
+import predict from 'eightball';
 
-module.exports = {
+export default {
   name: 'Eigthball predict', // max 20 chars
   func: predict,
 };

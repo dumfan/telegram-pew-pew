@@ -1,6 +1,9 @@
-import test from 'ava';
-const { forEach } = require('lodash');
-const { loadCommands } = require('../src/helpers');
+import { forEach } from 'lodash';
+import { commands } from '../src/commands';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(3).toBe(3);
+});
 
 const msg1 = {
   message_id: 40,
@@ -21,11 +24,10 @@ const msg1 = {
   args: [],
 };
 
-test('All functions', async function(t) {
-  const commands = await loadCommands();
-  forEach(commands, (obj, name) => {
-    t.truthy(obj.name, `No name set for ${name}`);
-    t.notThrows(obj.func, `${name} function is failing`);
-    t.notThrows(() => obj.func(msg1, () => {}), `${name} function is failing`);
+test('All functions', () => {
+  forEach(commands, (obj) => {
+    expect(obj.name).toBeTruthy();
+    expect(obj.func).not.toThrow();
+    expect(() => obj.func(msg1, () => {})).not.toThrow();
   });
 });

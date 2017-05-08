@@ -1,7 +1,7 @@
-const parse = require('../helpers').parseArgs;
-const request = require('request');
+import request from 'request';
+import { parseArgs as parse } from '../helpers';
 
-module.exports = {
+export default {
   name: 'File fetcher', // max 20 chars
   info: '`/fetch url` to have the bot send you the file',
   func: (msg, done, bot) => {
