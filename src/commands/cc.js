@@ -10,8 +10,8 @@ const convert = async (currency = 'bitcoin', _quantity = 1) => {
 };
 
 export default {
-  name: 'Cryptocurrency', // max 20 chars
-  info: 'Data from http://fixer.io/',
+  name: 'Cryptocurrency',
+  info: 'Data from http://coinmarketcap.com/',
   func: (msg, done) => {
     if (msg && msg.text) {
       const args = parse(msg.text);
