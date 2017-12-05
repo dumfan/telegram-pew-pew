@@ -8,7 +8,7 @@ function createDone(chatId) {
   };
 }
 
-const listen = commands => {
+const listen = (commands) => {
   bot.on('message', (obj) => {
     log.info('Got message', obj);
     if (obj.text) {

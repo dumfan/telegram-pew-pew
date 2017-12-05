@@ -7,7 +7,7 @@ if (!process.env.TELEGRAM_TOKEN) {
   process.exit();
 }
 
-loadCommands().then(cmds => {
+loadCommands().then((cmds) => {
   log.info(`Loaded ${Object.keys(cmds).length} commands`);
   listen(cmds);
 });
