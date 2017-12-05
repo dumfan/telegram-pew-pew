@@ -1,5 +1,4 @@
 import google from 'google';
-import { parseArgs as parse } from '../helpers';
 import log from '../log';
 
 const googleSearch = (query, callback) => {
@@ -24,7 +23,7 @@ export default {
   info: '`/google searchstring` to get the first result',
   func: (msg, done) => {
     if (msg && msg.text) {
-      const argString = parse(msg.text).join(' ');
+      const argString = msg.args.join(' ');
       googleSearch(argString, done);
     } else {
       return false;

@@ -1,13 +1,15 @@
 import log from './log';
 import listen from './listener';
-import { loadCommands } from './helpers';
+import commands from './commands';
 
 if (!process.env.TELEGRAM_TOKEN) {
   log.warn('TELEGRAM_TOKEN is not defined');
   process.exit();
 }
 
-loadCommands().then((cmds) => {
-  log.info(`Loaded ${Object.keys(cmds).length} commands`);
-  listen(cmds);
-});
+const init = async () => {
+  log.info(`Loaded ${Object.keys(commands).length} commands`);
+  listen(commands);
+};
+
+init();

@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import { parseArgs as parse } from '../helpers';
 
 const convert = (amountString, _from = 'EUR', _to = 'SEK') => {
   const to = _to.toUpperCase();
@@ -17,12 +16,11 @@ export default {
   info: 'Data from http://fixer.io/',
   func: (msg, done) => {
     if (msg && msg.text) {
-      const args = parse(msg.text);
-      if (!args[0]) {
+      if (!msg.args[0]) {
         done('Missing arguments. /cur amount <from:EUR> <to:SEK>');
         return;
       }
-      return convert(args[0], args[1], args[2]).then(done);
+      return convert(msg.args[0], msg.args[1], msg.args[2]).then(done);
     }
     return;
   },

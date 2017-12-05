@@ -1,18 +1,13 @@
-import commands from './commands';
-
-export function parse(msg) {
+export function getCommand(msg) {
   return msg.split(' ')[0].split('@')[0].replace('/', '');
 }
 
-export function parseArgs(msg) {
-  if (!msg || msg === '') {
-    return [];
-  }
-  const args = msg.split(' ');
+export function parseArgs(msg = '') {
+  const args = msg.split(' ').filter(Boolean);
   args.shift();
   return args;
 }
 
 export function loadCommands() {
-  return Promise.resolve(commands);
+  throw new Error('Deprecated');
 }

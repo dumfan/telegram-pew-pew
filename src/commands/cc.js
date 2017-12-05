@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import { parseArgs as parse } from '../helpers';
 
 const convert = async (currency = 'bitcoin', _quantity = 1) => {
   const quantity = parseFloat(_quantity, 10);
@@ -14,8 +13,7 @@ export default {
   info: 'Data from http://coinmarketcap.com/',
   func: (msg, done) => {
     if (msg && msg.text) {
-      const args = parse(msg.text);
-      return convert(args[0], args[1]).then(done);
+      return convert(msg.args[0], msg.args[1]).then(done);
     }
     return;
   },

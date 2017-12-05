@@ -1,9 +1,9 @@
-import { parse, parseArgs } from '../src/helpers';
+import { getCommand, parseArgs } from '../src/helpers';
 
 const string = '/haddock@botfan wibron är cool';
 
 test('parse()', () => {
-  const parsed = parse(string);
+  const parsed = getCommand(string);
   expect(parsed).toBe('haddock');
 });
 

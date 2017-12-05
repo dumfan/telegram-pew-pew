@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "backpack-core": "^0.4.3",
+    "common-tags": "^1.5.1",
     "eightball": "^1.0.1",
     "glob": "^7.0.4",
     "google": "^2.0.0",
