@@ -7,8 +7,9 @@ const config = new pulumi.Config();
 
 const password = config.requireSecret("dockerPassword");
 const token = config.requireSecret("telegramToken");
+const appName = 'dumfan-telegram'
 
-const image = new docker.Image('telegram-dumfan', {
+const image = new docker.Image(appName, {
   build: '../',
   imageName: 'dumfan/telegram',
   registry: {
@@ -18,9 +19,10 @@ const image = new docker.Image('telegram-dumfan', {
   }
 })
 
-const appLabels = { app: 'app-nginx' };
+const appLabels = { app: appName };
+
 const app = new k8s.apps.v1.Deployment(
-  'telegram',
+  'dumfan-telegram',
   {
     spec: {
       selector: { matchLabels: appLabels },
@@ -30,7 +32,7 @@ const app = new k8s.apps.v1.Deployment(
         spec: {
           containers: [
             {
-              name: 'telegram2',
+              name: appName,
               image: image.id,
               env: [{
                 name: 'TELEGRAM_TOKEN',
