@@ -1,0 +1,5 @@
+config:
+  telegram-bot:dockerPassword:
+    secure: AAABAAE0WTFddOjvYmMlqmT99bdXltVyj7J6WlgoGIAQ9jgXqVmfLnw3tUhEkS40
+  telegram-bot:telegramToken:
+    secure: AAABAE1HX+aYZ4HcC1mtq6Z2mBcJEE/BFn1qKgGEHKREgtzIZeTMWaRDkWrSWjyDhv4QG8qQ68BmE2veh+LV1gLxAgXiYUCFUZpiiA==
