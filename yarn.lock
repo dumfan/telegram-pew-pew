@@ -5335,8 +5335,9 @@ vm-browserify@0.0.4:
     indexof "0.0.1"
 
 vm2@^3.4.6:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.5.2.tgz#6ae7c75a867775946e1d4a66623374e0245150e0"
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.4.tgz#2e118290fefe7bd8ea09ebe2f5faf53730dbddaa"
+  integrity sha512-sOdharrJ7KEePIpHekiWaY1DwgueuiBeX/ZBJUPgETsVlJsXuEx0K0/naATq2haFvJrvZnRiORQRubR0b7Ye6g==
 
 walker@~1.0.5:
   version "1.0.7"
